@@ -7,5 +7,4 @@ cmds = [
   "cd server && npm install"
 ]
 
-[start]
-cmd = "cd server && npm run dev && cd ../webApp && npm run dev"
+cmd = "cd server && npm install concurrently && npx concurrently \"npm run dev\" \"cd ../webApp && npm run dev\""
