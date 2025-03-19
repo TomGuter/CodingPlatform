@@ -1,2 +1,1 @@
-web: cd server && npm start
-client: cd webApp && npm run build && npm run preview
+web: npm --prefix server run start && npm --prefix webApp run dev
