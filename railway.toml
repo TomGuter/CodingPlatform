@@ -1,17 +1,1 @@
-[build]
-  [build.server]
-    workingDirectory = "server"
-    buildCommand = "npm install && npm run build"  # Install and build the backend
 
-  [build.webApp]
-    workingDirectory = "webApp"
-    buildCommand = "npm install && npm run build"  # Install and build the frontend
-
-[deploy]
-  [[services]]
-    name = "server"
-    startCommand = "npm run dev"  # Start the backend server
-
-  [[services]]
-    name = "webApp"
-    startCommand = "npm run dev"  # Start the frontend server in development mode
