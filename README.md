@@ -1,5 +1,7 @@
-# codingPlatform
+# Coding Platform
 
-server - node.js and typescript  
+## Backend  
+- Built with **Node.js** and **TypeScript**  
 
-frontend - react
+## Frontend  
+- Developed using **React**  
