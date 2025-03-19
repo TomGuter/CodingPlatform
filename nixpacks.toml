@@ -8,4 +8,4 @@ cmds = [
 ]
 
 [start]
-cmd = "cd server && npm run dev && cd ../webApp && npm run dev"
+cmd = "cd webApp && npm run dev"
