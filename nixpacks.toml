@@ -1,15 +1,17 @@
-[phases.setup]
-  cmds = [
-    "cd server && npm install",
-    "cd webApp && npm install"
-  ]
+[build]
+  [build.server]
+    workingDirectory = "server"
+    buildCommand = "npm install && npm run build"
 
-[phases.build]
-  cmds = [
-    "cd webApp && npm run build"
-  ]
+  [build.webApp]
+    workingDirectory = "webApp"
+    buildCommand = "npm install && npm run build"  
 
-[phases.start]
-  cmds = [
-    "cd server && npm start"
-  ]
+[deploy]
+  [[services]]
+    name = "server"
+    startCommand = "npm run dev"  
+
+  [[services]]
+    name = "webApp"
+    startCommand = "npm run dev" 
