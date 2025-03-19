@@ -1,18 +1,11 @@
 [phases.setup]
-  cmds = [
-    "cd server && npm install",
-    "cd webApp && npm install"
-  ]
+nixPkgs = ["nodejs"]
 
 [phases.build]
-  cmds = [
-    "cd webApp && npm run build"
-  ]
+cmds = [
+  "cd webApp && npm install && npm run build", 
+  "cd server && npm install"  
+]
 
-[phases.start]
-  cmds = [
-    "cd server && npm start"
-  ]
-
-[providers.node]
-  version = "18" # Use the Node.js version you need (e.g., 18, 20)
+[start]
+cmd = "cd server && npm run dev && cd ../webApp && npm run dev" 
