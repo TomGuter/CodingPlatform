@@ -8,4 +8,4 @@ cmds = [
 ]
 
 [start]
-cmd = "npm install -g concurrently && concurrently \"cd server && npm run dev\" \"cd webApp && npm run dev\""
+cmd = "cd server && npx concurrently \"npm run dev\" \"cd ../webApp && npm run dev\""
