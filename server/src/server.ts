@@ -47,11 +47,11 @@ const initializeServer = async (): Promise<{
     app.use("/codeBlocks", codeblocks_route);
 
     if (process.env.NODE_ENV === "production") {
-      app.use(express.static(path.join(__dirname, "../../webApp")));
+      app.use(express.static(path.join(__dirname, "../../webApp/build")));
 
       app.get("*", (req, res) => {
         res.sendFile(
-          path.resolve(__dirname, "../../webApp", "index.html")
+          path.resolve(__dirname, "../../webApp/build", "index.html")
         );
       });
     }
