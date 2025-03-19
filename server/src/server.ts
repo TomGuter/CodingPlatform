@@ -136,7 +136,7 @@ const initializeServer = async (): Promise<{ app: Express; io: Server; server: R
 
     return { app, io, server };
   } catch (error) {
-    console.error('Failed to initialize server:');
+    console.error('Failed to initialize server!');
     throw error;
   }
 };
