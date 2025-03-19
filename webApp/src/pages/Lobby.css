@@ -1,0 +1,145 @@
+.lobby-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; 
+}
+
+.lobby-container h1 {
+  font-size: 36px; 
+  color: #333;
+  margin-bottom: 20px;
+  margin-right: 65px;
+  text-align: center;
+  background: linear-gradient(90deg, #007bff, #00bfff); 
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  display: inline-block; 
+  animation: fadeIn 1s ease-in-out; 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.create-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+  display: inline-block; 
+}
+
+.create-button:hover {
+  background-color: #0056b3;
+}
+
+.code-blocks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px;
+  padding: 20px;
+}
+
+.code-block-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.code-block-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  flex: 1;
+  border-right: 2px solid #ccc; 
+  padding-right: 20px; 
+  margin-right: 10px; 
+}
+
+.card-content h2 {
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 10px;
+  background-color: #007bff; 
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-content h2:hover {
+  background-color: #0056b3;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.update-button,
+.delete-button {
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.update-button:hover {
+  background-color: #218838;
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #ff1a1a;
+}
+
+.loading-container,
+.error-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.loading-container p,
+.error-container p {
+  font-size: 16px;
+  color: #555;
+}
