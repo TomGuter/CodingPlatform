@@ -1,3 +1,5 @@
-﻿# codingPlatform
-server - node.js and typescript
+# codingPlatform
+
+server - node.js and typescript  
+
 frontend - react
