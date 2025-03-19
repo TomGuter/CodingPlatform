@@ -19,15 +19,15 @@ const initializeServer = async (): Promise<{ app: Express; io: Server; server: R
     const server = createServer(app);
     const io = new Server(server, {
       cors: {
-        origin: `${process.env.FRONTEND_URL}`,
-        methods: ['GET', 'POST'],
+        origin: `${process.env.FRONTEND_URL}` || '*',
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization']
       }
     });
 
     app.use(
       cors({
-        origin: `${process.env.FRONTEND_URL}`,
+        origin: process.env.FRONTEND_URL || '*', 
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization']
       })
