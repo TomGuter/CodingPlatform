@@ -6,6 +6,7 @@ import cors from 'cors';
 import { Server, Socket } from 'socket.io';
 import { createServer } from 'http';
 import codeblocks_route from './routes/codeblocks_route';
+import path from 'path';
 
 dotenv.config();
 
@@ -42,6 +43,15 @@ const initializeServer = async (): Promise<{ app: Express; io: Server; server: R
 
   
     app.use('/codeBlocks', codeblocks_route);
+
+    if (process.env.NODE_ENV === 'production') {
+      app.use(express.static(path.join(__dirname, 'webApp', 'build')));
+      app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'webApp', 'build', 'index.html'));
+      });
+    }
+
+
 
     const rooms = new Map(); 
 
