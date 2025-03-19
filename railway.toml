@@ -15,4 +15,4 @@
 
   [[services]]
     name = "webApp"
-    startCommand = "npm run preview"
+    startCommand = "npm run build && npm run preview"
