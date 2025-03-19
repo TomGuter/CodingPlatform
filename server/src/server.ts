@@ -13,7 +13,7 @@ dotenv.config();
 const initializeServer = async (): Promise<{ app: Express; io: Server; server: ReturnType<typeof createServer> }> => {
   try {
     if (!process.env.DB_CONNECT) {
-      throw new Error('MONGO_URI is not set in environment variables');
+      throw new Error('MONGO_URI is not set in environment variables!');
     }
 
     const app = express();
