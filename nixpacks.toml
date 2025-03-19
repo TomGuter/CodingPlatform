@@ -13,3 +13,6 @@
   cmds = [
     "cd server && npm start"
   ]
+
+[providers.node]
+  version = "18" # Use the Node.js version you need (e.g., 18, 20)
