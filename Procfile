@@ -1,1 +1,1 @@
-web: npm --prefix server run start && npm --prefix webApp run dev
+web: npm --prefix server run start && npm --prefix webApp run preview
