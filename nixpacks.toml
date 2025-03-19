@@ -3,9 +3,9 @@ nixPkgs = ["nodejs"]
 
 [phases.build]
 cmds = [
-  "cd webApp && npm install && chmod -R +x node_modules/.bin && npm run build", 
+  "cd webApp && npm install && npm run build", 
   "cd server && npm install"
 ]
 
 [start]
-cd server && npm install concurrently && npx concurrently "npm run dev" "cd ../webApp && npm run dev"
+cmd = "cd server && npm install concurrently && npx concurrently \"npm run dev\" \"cd ../webApp && npm run dev\""
