@@ -13,7 +13,7 @@ dotenv.config();
 const initializeServer = async (): Promise<{ app: Express; io: Server; server: ReturnType<typeof createServer> }> => {
   try {
     if (!process.env.DB_CONNECT) {
-      throw new Error('MONGO_URI is not set in environment variables');
+      throw new Error('MONGO_URI is not set in environment variables!');
     }
 
     const app = express();
@@ -45,9 +45,9 @@ const initializeServer = async (): Promise<{ app: Express; io: Server; server: R
     app.use('/codeBlocks', codeblocks_route);
 
     if (process.env.NODE_ENV === 'production') {
-      app.use(express.static(path.join(__dirname, 'webApp', 'build')));
+      app.use(express.static(path.join(__dirname, 'webApp'))); 
       app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'webApp', 'build', 'index.html'));
+        res.sendFile(path.resolve(__dirname, 'webApp', 'index.html'));
       });
     }
 
